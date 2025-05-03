@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LevelUp Develop | Blog</title>
+    <!-- External CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- External JS Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.9.1/dist/gsap.min.js"></script>
+</head>
+<body class="overflow-x-hidden">
+    <!-- Preloader -->
+    <div class="loader">
+        <div class="wavy text-3xl md:text-5xl">
+            <span style="--i:1;">L</span><span style="--i:2;">e</span><span style="--i:3;">v</span><span style="--i:4;">e</span><span style="--i:5;">l</span><span style="--i:6;">U</span><span style="--i:7;">p</span><span style="--i:8;">&nbsp;</span><span style="--i:9;">D</span><span style="--i:10;">e</span><span style="--i:11;">v</span><span style="--i:12;">e</span><span style="--i:13;">l</span><span style="--i:14;">o</span><span style="--i:15;">p</span>
+        </div>
+    </div>
+
+    <!-- 3D Animation Canvas -->
+    <div id="canvas-container"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar fixed w-full top-0 z-50 py-4 px-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                 <div class="logo-container mr-3">
+                    <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 80L50 20L80 80H20Z" stroke="#6C63FF" stroke-width="5" fill="none" />
+                        <path d="M35 50L50 20L65 50H35Z" fill="#6C63FF" />
+                        <rect x="35" y="55" width="30" height="10" fill="#22d3ee" />
+                    </svg>
+                </div>
+                <div>
+                    <span class="logo-text gradient-text">LevelUp Develop</span>
+                </div>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="portfolio.html" class="nav-link">Portfolio</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="blogs.html" class="nav-link text-primary">Blog</a> <!-- Active Link -->
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 py-4 px-6 absolute top-full left-0 w-full">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="portfolio.html" class="nav-link">Portfolio</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="blogs.html" class="nav-link text-primary">Blog</a> <!-- Active Link -->
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Wrapper -->
+    <main class="main-content-area container mx-auto px-6">
+        <!-- Blog Page Content -->
+        <div id="blogs" class="page"> <!-- Removed active-page -->
+            <div class="py-16 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Our <span class="gradient-text">Blog</span></h1>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">Latest news, insights, and trends in web development and design.</p>
+            </div>
+            
+            <!-- Blog Post Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-12">
+                <!-- Placeholder Blog Post 1 -->
+                <div class="card rounded-xl overflow-hidden">
+                    <div class="h-48 bg-gray-700"></div> <!-- Placeholder Image -->
+                    <div class="p-6">
+                        <div class="text-sm text-gray-400 mb-2">May 03, 2025 | Web Development</div>
+                        <h3 class="text-xl font-bold mb-3">The Future of Frontend Frameworks</h3>
+                        <p class="text-gray-400 mb-4">Exploring the latest trends and predictions for React, Vue, Angular, and beyond...</p>
+                        <a href="#" class="text-primary hover:underline font-semibold">Read More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                <!-- Placeholder Blog Post 2 -->
+                 <div class="card rounded-xl overflow-hidden">
+                    <div class="h-48 bg-gray-700"></div> <!-- Placeholder Image -->
+                    <div class="p-6">
+                        <div class="text-sm text-gray-400 mb-2">April 28, 2025 | UI/UX Design</div>
+                        <h3 class="text-xl font-bold mb-3">Designing for Accessibility: A Guide</h3>
+                        <p class="text-gray-400 mb-4">Why accessibility matters and how to create inclusive digital experiences for everyone...</p>
+                        <a href="#" class="text-primary hover:underline font-semibold">Read More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                 <!-- Placeholder Blog Post 3 -->
+                 <div class="card rounded-xl overflow-hidden">
+                    <div class="h-48 bg-gray-700"></div> <!-- Placeholder Image -->
+                    <div class="p-6">
+                        <div class="text-sm text-gray-400 mb-2">April 15, 2025 | E-Commerce</div>
+                        <h3 class="text-xl font-bold mb-3">Boosting Conversions on Your Online Store</h3>
+                        <p class="text-gray-400 mb-4">Proven strategies to optimize your e-commerce site and turn visitors into customers...</p>
+                        <a href="#" class="text-primary hover:underline font-semibold">Read More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+                 <!-- Add more placeholder posts as needed -->
+                 <div class="card rounded-xl overflow-hidden">
+                    <div class="h-48 bg-gray-700"></div> <!-- Placeholder Image -->
+                    <div class="p-6">
+                        <div class="text-sm text-gray-400 mb-2">April 05, 2025 | Technology</div>
+                        <h3 class="text-xl font-bold mb-3">Introduction to Headless CMS</h3>
+                        <p class="text-gray-400 mb-4">What is a headless CMS and why it might be the right choice for your next project...</p>
+                        <a href="#" class="text-primary hover:underline font-semibold">Read More <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination (Optional Placeholder) -->
+            <div class="flex justify-center py-8">
+                <nav class="flex space-x-2" aria-label="Pagination">
+                    <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-700 bg-gray-800 text-sm font-medium text-gray-400 hover:bg-gray-700">
+                        <span class="sr-only">Previous</span>
+                        <i class="fas fa-chevron-left h-5 w-5"></i>
+                    </a>
+                    <a href="#" aria-current="page" class="relative z-10 inline-flex items-center px-4 py-2 border border-primary bg-primary text-sm font-medium text-white"> 1 </a>
+                    <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-700 bg-gray-800 text-sm font-medium text-gray-400 hover:bg-gray-700"> 2 </a>
+                    <a href="#" class="relative inline-flex items-center px-4 py-2 border border-gray-700 bg-gray-800 text-sm font-medium text-gray-400 hover:bg-gray-700"> 3 </a>
+                    <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-700 bg-gray-800 text-sm font-medium text-gray-400 hover:bg-gray-700">
+                        <span class="sr-only">Next</span>
+                        <i class="fas fa-chevron-right h-5 w-5"></i>
+                    </a>
+                </nav>
+            </div>
+
+             <!-- CTA Section -->
+            <div class="py-16 text-center">
+                <div class="bg-gray-900 rounded-2xl p-12 relative overflow-hidden">
+                    <div class="absolute bottom-0 right-0 w-64 h-64 bg-secondary rounded-full filter blur-3xl opacity-10 z-0"></div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 relative z-10">Want to discuss a project?</h2>
+                    <p class="text-xl text-gray-400 mb-8 max-w-2xl mx-auto relative z-10">Get in touch with our team for a free consultation.</p>
+                    <a href="contact.html" class="btn-primary px-8 py-4 rounded-full font-bold text-lg relative z-10">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </main> <!-- End Main Content Wrapper -->
+
+    <!-- Footer -->
+    <footer class="bg-darker py-12 relative z-10">
+        <div class="container mx-auto px-6">
+             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="logo-container mr-3">
+                            <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 80L50 20L80 80H20Z" stroke="#6C63FF" stroke-width="5" fill="none" />
+                                <path d="M35 50L50 20L65 50H35Z" fill="#6C63FF" />
+                                <rect x="35" y="55" width="30" height="10" fill="#22d3ee" />
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="logo-text gradient-text">LevelUp Develop</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6">Elevating businesses through innovative web development solutions.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-6">Services</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="services.html" class="hover:text-white">Web Development</a></li>
+                        <li><a href="services.html#ui-ux" class="hover:text-white">UI/UX Design</a></li>
+                        <li><a href="services.html#mobile" class="hover:text-white">Mobile Development</a></li>
+                        <li><a href="services.html#ecommerce" class="hover:text-white">E-Commerce Solutions</a></li>
+                        <li><a href="services.html#marketing" class="hover:text-white">Digital Marketing</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-6">Company</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="about.html" class="hover:text-white">About Us</a></li>
+                        <li><a href="about.html#team" class="hover:text-white">Our Team</a></li>
+                        <li><a href="#" class="hover:text-white">Careers</a></li>
+                        <li><a href="blogs.html" class="hover:text-white">Blog</a></li>
+                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-6">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates.</p>
+                    <form>
+                        <div class="flex">
+                            <input type="email" placeholder="Enter your email" class="p-3 bg-gray-800 rounded-l-lg w-full focus:outline-none text-white">
+                            <button type="submit" class="btn-primary px-4 rounded-r-lg"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400">© 2025 LevelUp Develop. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>
+

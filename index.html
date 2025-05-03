@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LevelUp Develop | Home</title>
+    <!-- External CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- External JS Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.9.1/dist/gsap.min.js"></script>
+</head>
+<body class="overflow-x-hidden">
+    <!-- Preloader -->
+    <div class="loader">
+        <div class="wavy text-3xl md:text-5xl">
+            <span style="--i:1;">L</span>
+            <span style="--i:2;">e</span>
+            <span style="--i:3;">v</span>
+            <span style="--i:4;">e</span>
+            <span style="--i:5;">l</span>
+            <span style="--i:6;">U</span>
+            <span style="--i:7;">p</span>
+            <span style="--i:8;">&nbsp;</span>
+            <span style="--i:9;">D</span>
+            <span style="--i:10;">e</span>
+            <span style="--i:11;">v</span>
+            <span style="--i:12;">e</span>
+            <span style="--i:13;">l</span>
+            <span style="--i:14;">o</span>
+            <span style="--i:15;">p</span>
+        </div>
+    </div>
+
+    <!-- 3D Animation Canvas -->
+    <div id="canvas-container"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar fixed w-full top-0 z-50 py-4 px-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="logo-container mr-3">
+                    <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 80L50 20L80 80H20Z" stroke="#6C63FF" stroke-width="5" fill="none" />
+                        <path d="M35 50L50 20L65 50H35Z" fill="#6C63FF" />
+                        <rect x="35" y="55" width="30" height="10" fill="#22d3ee" />
+                    </svg>
+                </div>
+                <div>
+                    <span class="logo-text gradient-text">LevelUp Develop</span>
+                </div>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="nav-link text-primary">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="portfolio.html" class="nav-link">Portfolio</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="blogs.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 py-4 px-6 absolute top-full left-0 w-full">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="nav-link text-primary">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="portfolio.html" class="nav-link">Portfolio</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="blogs.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Wrapper -->
+    <main class="main-content-area container mx-auto px-6">
+        <!-- Home Page Content -->
+        <div id="home" class="page"> <!-- Removed active-page, rely on CSS for fade-in -->
+            <div class="flex flex-col md:flex-row items-center justify-between py-16">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4">
+                        <span class="gradient-text">Transform</span> Your Digital Presence
+                    </h1>
+                    <p class="text-xl mb-6 text-gray-300">Elevate your business with cutting-edge web solutions that drive growth and engagement.</p>
+                    <div class="flex space-x-4">
+                        <a href="services.html" class="btn-primary px-8 py-3 rounded-full font-bold">Our Services</a>
+                        <a href="portfolio.html" class="bg-transparent border border-gray-500 hover:border-white px-8 py-3 rounded-full font-bold transition duration-300">View Portfolio</a>
+                    </div>
+                    <div class="mt-10 flex items-center space-x-4">
+                        <div class="flex -space-x-2">
+                            <div class="w-10 h-10 rounded-full border-2 border-gray-800 bg-gray-700 flex items-center justify-center">
+                                <span class="text-xs font-bold">JS</span>
+                            </div>
+                            <div class="w-10 h-10 rounded-full border-2 border-gray-800 bg-gray-700 flex items-center justify-center">
+                                <span class="text-xs font-bold">TS</span>
+                            </div>
+                            <div class="w-10 h-10 rounded-full border-2 border-gray-800 bg-gray-700 flex items-center justify-center">
+                                <span class="text-xs font-bold">R</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-400">Trusted by <span class="text-white font-bold">500+</span> clients worldwide</p>
+                    </div>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <div class="relative z-10 bg-darker p-8 rounded-xl glow">
+                        <div class="bg-gray-900 p-4 rounded-lg mb-4">
+                            <div class="flex space-x-2 mb-2">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            </div>
+                            <pre class="text-sm"><code><span class="text-pink-500">const</span> <span class="text-blue-400">levelUp</span> <span class="text-white">=</span> <span class="text-yellow-300">()</span> <span class="text-white">=> {</span>
+  <span class="text-green-400">// Transform your ideas into reality</span>
+  <span class="text-pink-500">return</span> <span class="text-yellow-300">createAmazingExperience</span><span class="text-white">();</span>
+<span class="text-white">};</span></code></pre>
+                        </div>
+                        <p class="text-center text-sm text-gray-400">Your vision, our code. Results that speak.</p>
+                    </div>
+                    <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-primary rounded-full filter blur-3xl opacity-10 z-0"></div>
+                </div>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 py-16 border-t border-b border-gray-800">
+                <div class="text-center">
+                    <h3 class="text-4xl font-bold gradient-text">150+</h3>
+                    <p class="text-gray-400 mt-2">Projects Completed</p>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-4xl font-bold gradient-text">98%</h3>
+                    <p class="text-gray-400 mt-2">Client Satisfaction</p>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-4xl font-bold gradient-text">15+</h3>
+                    <p class="text-gray-400 mt-2">Team Members</p>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-4xl font-bold gradient-text">24/7</h3>
+                    <p class="text-gray-400 mt-2">Support Available</p>
+                </div>
+            </div>
+
+            <!-- Featured Work Section -->
+            <div class="py-16">
+                <h2 class="text-3xl font-bold mb-12 text-center">Featured <span class="gradient-text">Projects</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                     <div class="card rounded-xl overflow-hidden">
+                        <div class="h-48 bg-gray-700"></div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">E-Commerce Platform</h3>
+                            <p class="text-gray-400 mb-4">A fully responsive shopping experience...</p>
+                            <a href="portfolio.html" class="text-primary hover:underline">View Project</a>
+                        </div>
+                    </div>
+                     <div class="card rounded-xl overflow-hidden">
+                        <div class="h-48 bg-gray-700"></div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Finance Dashboard</h3>
+                            <p class="text-gray-400 mb-4">Real-time data visualization...</p>
+                             <a href="portfolio.html" class="text-primary hover:underline">View Project</a>
+                        </div>
+                    </div>
+                     <div class="card rounded-xl overflow-hidden">
+                        <div class="h-48 bg-gray-700"></div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">Healthcare Portal</h3>
+                            <p class="text-gray-400 mb-4">Secure patient management system...</p>
+                             <a href="portfolio.html" class="text-primary hover:underline">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="text-center mt-8">
+                     <a href="portfolio.html" class="btn-primary px-8 py-3 rounded-full font-bold">Explore More Projects</a>
+                 </div>
+            </div>
+            
+             <!-- CTA Section -->
+            <div class="py-16 text-center">
+                <div class="bg-gray-900 rounded-2xl p-12 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary rounded-full filter blur-3xl opacity-10 z-0"></div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 relative z-10">Ready to <span class="gradient-text">Level Up</span> your digital presence?</h2>
+                    <p class="text-xl text-gray-400 mb-8 max-w-2xl mx-auto relative z-10">Let's discuss how we can help transform your business with our web development expertise.</p>
+                    <a href="contact.html" class="btn-primary px-8 py-4 rounded-full font-bold text-lg relative z-10">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </main> <!-- End Main Content Wrapper -->
+
+    <!-- Footer -->
+    <footer class="bg-darker py-12 relative z-10"> <!-- Ensure footer is also above canvas -->
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="logo-container mr-3">
+                            <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 80L50 20L80 80H20Z" stroke="#6C63FF" stroke-width="5" fill="none" />
+                                <path d="M35 50L50 20L65 50H35Z" fill="#6C63FF" />
+                                <rect x="35" y="55" width="30" height="10" fill="#22d3ee" />
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="logo-text gradient-text">LevelUp Develop</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6">Elevating businesses through innovative web development solutions.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-6">Services</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="services.html" class="hover:text-white">Web Development</a></li>
+                        <li><a href="services.html#ui-ux" class="hover:text-white">UI/UX Design</a></li>
+                        <li><a href="services.html#mobile" class="hover:text-white">Mobile Development</a></li>
+                        <li><a href="services.html#ecommerce" class="hover:text-white">E-Commerce Solutions</a></li>
+                        <li><a href="services.html#marketing" class="hover:text-white">Digital Marketing</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-6">Company</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="about.html" class="hover:text-white">About Us</a></li>
+                        <li><a href="about.html#team" class="hover:text-white">Our Team</a></li>
+                        <li><a href="#" class="hover:text-white">Careers</a></li>
+                        <li><a href="blogs.html" class="hover:text-white">Blog</a></li>
+                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-6">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates.</p>
+                    <form>
+                        <div class="flex">
+                            <input type="email" placeholder="Enter your email" class="p-3 bg-gray-800 rounded-l-lg w-full focus:outline-none text-white">
+                            <button type="submit" class="btn-primary px-4 rounded-r-lg">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400">© 2025 LevelUp Develop. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>
+

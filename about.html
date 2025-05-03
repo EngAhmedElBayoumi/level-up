@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LevelUp Develop | About Us</title>
+    <!-- External CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- External JS Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.9.1/dist/gsap.min.js"></script>
+</head>
+<body class="overflow-x-hidden">
+    <!-- Preloader -->
+    <div class="loader">
+        <div class="wavy text-3xl md:text-5xl">
+            <span style="--i:1;">L</span><span style="--i:2;">e</span><span style="--i:3;">v</span><span style="--i:4;">e</span><span style="--i:5;">l</span><span style="--i:6;">U</span><span style="--i:7;">p</span><span style="--i:8;">&nbsp;</span><span style="--i:9;">D</span><span style="--i:10;">e</span><span style="--i:11;">v</span><span style="--i:12;">e</span><span style="--i:13;">l</span><span style="--i:14;">o</span><span style="--i:15;">p</span>
+        </div>
+    </div>
+
+    <!-- 3D Animation Canvas -->
+    <div id="canvas-container"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar fixed w-full top-0 z-50 py-4 px-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                 <div class="logo-container mr-3">
+                    <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 80L50 20L80 80H20Z" stroke="#6C63FF" stroke-width="5" fill="none" />
+                        <path d="M35 50L50 20L65 50H35Z" fill="#6C63FF" />
+                        <rect x="35" y="55" width="30" height="10" fill="#22d3ee" />
+                    </svg>
+                </div>
+                <div>
+                    <span class="logo-text gradient-text">LevelUp Develop</span>
+                </div>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="portfolio.html" class="nav-link">Portfolio</a>
+                <a href="about.html" class="nav-link text-primary">About</a> <!-- Active Link -->
+                <a href="blogs.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 py-4 px-6 absolute top-full left-0 w-full">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="portfolio.html" class="nav-link">Portfolio</a>
+                <a href="about.html" class="nav-link text-primary">About</a> <!-- Active Link -->
+                <a href="blogs.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Wrapper -->
+    <main class="main-content-area container mx-auto px-6">
+        <!-- About Page Content -->
+        <div id="about" class="page"> <!-- Removed active-page -->
+            <div class="py-16 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">About <span class="gradient-text">Us</span></h1>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">We are a passionate team of developers and designers dedicated to creating exceptional digital experiences.</p>
+            </div>
+            
+            <!-- Mission/Vision Section -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 py-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-4">Our <span class="gradient-text">Mission</span></h2>
+                    <p class="text-gray-300 mb-6">To empower businesses by leveraging technology, delivering innovative web solutions that drive growth, efficiency, and user engagement. We strive to be a trusted partner in our clients' digital transformation journey.</p>
+                    <h2 class="text-3xl font-bold mb-4">Our <span class="gradient-text">Vision</span></h2>
+                    <p class="text-gray-300">To be a leading web development agency recognized for our creativity, technical excellence, and commitment to client success. We envision a future where technology seamlessly enhances every aspect of business and life.</p>
+                </div>
+                <div class="bg-gray-800 rounded-xl p-8 h-full flex items-center justify-center">
+                     <div class="text-center">
+                        <div class="text-6xl mb-4">🚀</div>
+                        <p class="text-gray-400">Building the future, one line of code at a time.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Section -->
+            <div class="py-16" id="team">
+                <h2 class="text-3xl font-bold mb-12 text-center">Meet Our <span class="gradient-text">Team</span></h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="card p-6 rounded-xl text-center">
+                        <div class="w-24 h-24 rounded-full bg-gray-700 mx-auto mb-4"></div> <!-- Placeholder Avatar -->
+                        <h3 class="text-xl font-bold mb-1">Alex Johnson</h3>
+                        <p class="text-primary mb-3">Lead Developer</p>
+                        <p class="text-gray-400 text-sm mb-4">Expert in full-stack development with a passion for clean code.</p>
+                        <div class="flex justify-center space-x-3">
+                            <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="card p-6 rounded-xl text-center">
+                        <div class="w-24 h-24 rounded-full bg-gray-700 mx-auto mb-4"></div> <!-- Placeholder Avatar -->
+                        <h3 class="text-xl font-bold mb-1">Maria Garcia</h3>
+                        <p class="text-primary mb-3">UI/UX Designer</p>
+                        <p class="text-gray-400 text-sm mb-4">Crafting intuitive and visually stunning user interfaces.</p>
+                         <div class="flex justify-center space-x-3">
+                            <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-dribbble"></i></a>
+                        </div>
+                    </div>
+                    <div class="card p-6 rounded-xl text-center">
+                        <div class="w-24 h-24 rounded-full bg-gray-700 mx-auto mb-4"></div> <!-- Placeholder Avatar -->
+                        <h3 class="text-xl font-bold mb-1">David Chen</h3>
+                        <p class="text-primary mb-3">Backend Engineer</p>
+                        <p class="text-gray-400 text-sm mb-4">Building scalable and secure server-side applications.</p>
+                         <div class="flex justify-center space-x-3">
+                            <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="card p-6 rounded-xl text-center">
+                        <div class="w-24 h-24 rounded-full bg-gray-700 mx-auto mb-4"></div> <!-- Placeholder Avatar -->
+                        <h3 class="text-xl font-bold mb-1">Sarah Miller</h3>
+                        <p class="text-primary mb-3">Project Manager</p>
+                        <p class="text-gray-400 text-sm mb-4">Ensuring projects are delivered on time and exceed expectations.</p>
+                         <div class="flex justify-center space-x-3">
+                            <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Expertise/Skills Section -->
+            <div class="py-16">
+                <h2 class="text-3xl font-bold mb-12 text-center">Our <span class="gradient-text">Expertise</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <div class="mb-8">
+                            <div class="flex justify-between mb-2"><span class="font-bold">Frontend Development</span><span>95%</span></div>
+                            <div class="skill-bar"><div class="skill-percentage" style="width: 95%;" data-percent="95%"></div></div>
+                        </div>
+                        <div class="mb-8">
+                            <div class="flex justify-between mb-2"><span class="font-bold">Backend Development</span><span>90%</span></div>
+                            <div class="skill-bar"><div class="skill-percentage" style="width: 90%;" data-percent="90%"></div></div>
+                        </div>
+                        <div class="mb-8">
+                            <div class="flex justify-between mb-2"><span class="font-bold">UI/UX Design</span><span>85%</span></div>
+                            <div class="skill-bar"><div class="skill-percentage" style="width: 85%;" data-percent="85%"></div></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="mb-8">
+                            <div class="flex justify-between mb-2"><span class="font-bold">Mobile Development</span><span>80%</span></div>
+                            <div class="skill-bar"><div class="skill-percentage" style="width: 80%;" data-percent="80%"></div></div>
+                        </div>
+                        <div class="mb-8">
+                            <div class="flex justify-between mb-2"><span class="font-bold">Database Management</span><span>88%</span></div>
+                            <div class="skill-bar"><div class="skill-percentage" style="width: 88%;" data-percent="88%"></div></div>
+                        </div>
+                        <div class="mb-8">
+                            <div class="flex justify-between mb-2"><span class="font-bold">DevOps</span><span>75%</span></div>
+                            <div class="skill-bar"><div class="skill-percentage" style="width: 75%;" data-percent="75%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Technologies -->
+            <div class="py-12 text-center">
+                <h3 class="text-2xl font-bold mb-8">Technologies We Work With</h3>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <div class="p-4 rounded-xl bg-gray-800 w-20 h-20 flex items-center justify-center" title="React"><i class="fab fa-react text-3xl"></i></div>
+                    <div class="p-4 rounded-xl bg-gray-800 w-20 h-20 flex items-center justify-center" title="Vue.js"><i class="fab fa-vuejs text-3xl"></i></div>
+                    <div class="p-4 rounded-xl bg-gray-800 w-20 h-20 flex items-center justify-center" title="Angular"><i class="fab fa-angular text-3xl"></i></div>
+                    <div class="p-4 rounded-xl bg-gray-800 w-20 h-20 flex items-center justify-center" title="Node.js"><i class="fab fa-node-js text-3xl"></i></div>
+                    <div class="p-4 rounded-xl bg-gray-800 w-20 h-20 flex items-center justify-center" title="Python"><i class="fab fa-python text-3xl"></i></div>
+                    <div class="p-4 rounded-xl bg-gray-800 w-20 h-20 flex items-center justify-center" title="PHP"><i class="fab fa-php text-3xl"></i></div>
+                    <div class="p-4 rounded-xl bg-gray-800 w-20 h-20 flex items-center justify-center" title="AWS"><i class="fab fa-aws text-3xl"></i></div>
+                    <div class="p-4 rounded-xl bg-gray-800 w-20 h-20 flex items-center justify-center" title="Figma"><i class="fab fa-figma text-3xl"></i></div>
+                     <div class="p-4 rounded-xl bg-gray-800 w-20 h-20 flex items-center justify-center" title="Docker"><i class="fab fa-docker text-3xl"></i></div>
+                     <div class="p-4 rounded-xl bg-gray-800 w-20 h-20 flex items-center justify-center" title="JavaScript"><i class="fab fa-js-square text-3xl"></i></div>
+                     <div class="p-4 rounded-xl bg-gray-800 w-20 h-20 flex items-center justify-center" title="HTML5"><i class="fab fa-html5 text-3xl"></i></div>
+                     <div class="p-4 rounded-xl bg-gray-800 w-20 h-20 flex items-center justify-center" title="CSS3"><i class="fab fa-css3-alt text-3xl"></i></div>
+                </div>
+            </div>
+
+             <!-- CTA Section -->
+            <div class="py-16 text-center">
+                <div class="bg-gray-900 rounded-2xl p-12 relative overflow-hidden">
+                    <div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary rounded-full filter blur-3xl opacity-10 z-0"></div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 relative z-10">Join Our Team!</h2>
+                    <p class="text-xl text-gray-400 mb-8 max-w-2xl mx-auto relative z-10">We're always looking for talented individuals. Check out our open positions.</p>
+                    <a href="#" class="btn-primary px-8 py-4 rounded-full font-bold text-lg relative z-10">View Careers</a> <!-- Placeholder Link -->
+                </div>
+            </div>
+        </div>
+    </main> <!-- End Main Content Wrapper -->
+
+    <!-- Footer -->
+    <footer class="bg-darker py-12 relative z-10">
+        <div class="container mx-auto px-6">
+             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="logo-container mr-3">
+                            <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 80L50 20L80 80H20Z" stroke="#6C63FF" stroke-width="5" fill="none" />
+                                <path d="M35 50L50 20L65 50H35Z" fill="#6C63FF" />
+                                <rect x="35" y="55" width="30" height="10" fill="#22d3ee" />
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="logo-text gradient-text">LevelUp Develop</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6">Elevating businesses through innovative web development solutions.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-6">Services</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="services.html" class="hover:text-white">Web Development</a></li>
+                        <li><a href="services.html#ui-ux" class="hover:text-white">UI/UX Design</a></li>
+                        <li><a href="services.html#mobile" class="hover:text-white">Mobile Development</a></li>
+                        <li><a href="services.html#ecommerce" class="hover:text-white">E-Commerce Solutions</a></li>
+                        <li><a href="services.html#marketing" class="hover:text-white">Digital Marketing</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-6">Company</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="about.html" class="hover:text-white">About Us</a></li>
+                        <li><a href="about.html#team" class="hover:text-white">Our Team</a></li>
+                        <li><a href="#" class="hover:text-white">Careers</a></li>
+                        <li><a href="blogs.html" class="hover:text-white">Blog</a></li>
+                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-6">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates.</p>
+                    <form>
+                        <div class="flex">
+                            <input type="email" placeholder="Enter your email" class="p-3 bg-gray-800 rounded-l-lg w-full focus:outline-none text-white">
+                            <button type="submit" class="btn-primary px-4 rounded-r-lg"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400">© 2025 LevelUp Develop. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>
+

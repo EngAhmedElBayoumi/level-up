@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LevelUp Develop | Contact Us</title>
+    <!-- External CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- External JS Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.9.1/dist/gsap.min.js"></script>
+</head>
+<body class="overflow-x-hidden">
+    <!-- Preloader -->
+    <div class="loader">
+        <div class="wavy text-3xl md:text-5xl">
+            <span style="--i:1;">L</span><span style="--i:2;">e</span><span style="--i:3;">v</span><span style="--i:4;">e</span><span style="--i:5;">l</span><span style="--i:6;">U</span><span style="--i:7;">p</span><span style="--i:8;">&nbsp;</span><span style="--i:9;">D</span><span style="--i:10;">e</span><span style="--i:11;">v</span><span style="--i:12;">e</span><span style="--i:13;">l</span><span style="--i:14;">o</span><span style="--i:15;">p</span>
+        </div>
+    </div>
+
+    <!-- 3D Animation Canvas -->
+    <div id="canvas-container"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar fixed w-full top-0 z-50 py-4 px-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                 <div class="logo-container mr-3">
+                    <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 80L50 20L80 80H20Z" stroke="#6C63FF" stroke-width="5" fill="none" />
+                        <path d="M35 50L50 20L65 50H35Z" fill="#6C63FF" />
+                        <rect x="35" y="55" width="30" height="10" fill="#22d3ee" />
+                    </svg>
+                </div>
+                <div>
+                    <span class="logo-text gradient-text">LevelUp Develop</span>
+                </div>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="portfolio.html" class="nav-link">Portfolio</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="blogs.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link text-primary">Contact</a> <!-- Active Link -->
+            </div>
+            <div class="flex items-center space-x-4">
+               
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 py-4 px-6 absolute top-full left-0 w-full">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="portfolio.html" class="nav-link">Portfolio</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="blogs.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link text-primary">Contact</a> <!-- Active Link -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Wrapper -->
+    <main class="main-content-area container mx-auto px-6">
+        <!-- Contact Page Content -->
+        <div id="contact" class="page"> <!-- Removed active-page -->
+            <div class="py-16 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Get in <span class="gradient-text">Touch</span></h1>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">Ready to start your project? Contact us today for a free consultation.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 py-12">
+                <!-- Contact Form -->
+                <div>
+                    <div class="card p-8 rounded-xl">
+                        <h2 class="text-2xl font-bold mb-6">Send us a message</h2>
+                        <form action="#" method="POST"> <!-- Added form attributes -->
+                            <div class="mb-4">
+                                <label for="name" class="block mb-2 text-gray-400">Your Name</label>
+                                <input type="text" id="name" name="name" required class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:border-primary focus:outline-none text-white">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block mb-2 text-gray-400">Email Address</label>
+                                <input type="email" id="email" name="email" required class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:border-primary focus:outline-none text-white">
+                            </div>
+                            <div class="mb-4">
+                                <label for="subject" class="block mb-2 text-gray-400">Subject</label>
+                                <input type="text" id="subject" name="subject" class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:border-primary focus:outline-none text-white">
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="block mb-2 text-gray-400">Message</label>
+                                <textarea id="message" name="message" rows="5" required class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:border-primary focus:outline-none text-white"></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary w-full py-3 rounded-lg font-bold">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Contact Information -->
+                <div>
+                    <div class="card p-8 rounded-xl mb-8">
+                        <h2 class="text-2xl font-bold mb-6">Contact Information</h2>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="text-primary mr-4 mt-1"><i class="fas fa-map-marker-alt"></i></div>
+                                <div>
+                                    <h3 class="font-bold mb-1">Address</h3>
+                                    <p class="text-gray-400">123 Tech Street, Silicon Valley, CA 94043</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-primary mr-4 mt-1"><i class="fas fa-envelope"></i></div>
+                                <div>
+                                    <h3 class="font-bold mb-1">Email</h3>
+                                    <p class="text-gray-400"><a href="mailto:info@levelupdevelop.com" class="hover:text-white">info@levelupdevelop.com</a></p> <!-- Corrected mailto link -->
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-primary mr-4 mt-1"><i class="fas fa-phone-alt"></i></div>
+                                <div>
+                                    <h3 class="font-bold mb-1">Phone</h3>
+                                    <p class="text-gray-400"><a href="tel:+15551234567" class="hover:text-white">+1 (555) 123-4567</a></p> <!-- Added tel link -->
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="text-primary mr-4 mt-1"><i class="fas fa-clock"></i></div>
+                                <div>
+                                    <h3 class="font-bold mb-1">Working Hours</h3>
+                                    <p class="text-gray-400">Monday - Friday: 9:00 AM - 6:00 PM (PST)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h3 class="font-bold mb-4">Follow Us</h3>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition duration-300"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition duration-300"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition duration-300"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-primary hover:text-white transition duration-300"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ -->
+                    <div class="card p-8 rounded-xl">
+                        <h2 class="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
+                        <div class="space-y-4">
+                            <div class="border-b border-gray-800 pb-4">
+                                <h3 class="font-bold mb-2">How long does a typical project take?</h3>
+                                <p class="text-gray-400">Project timelines vary based on complexity. A simple website might take 2-4 weeks, while a complex web application could take 3-6 months.</p>
+                            </div>
+                            <div class="border-b border-gray-800 pb-4">
+                                <h3 class="font-bold mb-2">What is your pricing structure?</h3>
+                                <p class="text-gray-400">We offer both project-based pricing and monthly retainer options. Each quote is customized based on your specific requirements. <a href="contact.html" class="text-primary hover:underline">Contact us</a> for details.</p>
+                            </div>
+                            <div>
+                                <h3 class="font-bold mb-2">Do you provide ongoing support?</h3>
+                                <p class="text-gray-400">Yes, we offer maintenance packages and ongoing support to ensure your website or application continues to function optimally.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Map Section -->
+            <div class="py-12">
+                 <h2 class="text-3xl font-bold mb-8 text-center">Our <span class="gradient-text">Location</span></h2>
+                <div class="bg-gray-800 h-64 md:h-96 rounded-xl flex items-center justify-center overflow-hidden">
+                    <!-- Embed Google Map or similar -->
+                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3171.9868999999997!2d-122.084!3d37.422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fba024251fecb%3A0xe4a5a45a48be038d!2sGoogleplex!5e0!3m2!1sen!2sus!4v1678886400000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+            
+        </div>
+    </main> <!-- End Main Content Wrapper -->
+
+    <!-- Footer -->
+    <footer class="bg-darker py-12 relative z-10">
+        <div class="container mx-auto px-6">
+             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="logo-container mr-3">
+                            <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 80L50 20L80 80H20Z" stroke="#6C63FF" stroke-width="5" fill="none" />
+                                <path d="M35 50L50 20L65 50H35Z" fill="#6C63FF" />
+                                <rect x="35" y="55" width="30" height="10" fill="#22d3ee" />
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="logo-text gradient-text">LevelUp Develop</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-6">Elevating businesses through innovative web development solutions.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-6">Services</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="services.html" class="hover:text-white">Web Development</a></li>
+                        <li><a href="services.html#ui-ux" class="hover:text-white">UI/UX Design</a></li>
+                        <li><a href="services.html#mobile" class="hover:text-white">Mobile Development</a></li>
+                        <li><a href="services.html#ecommerce" class="hover:text-white">E-Commerce Solutions</a></li>
+                        <li><a href="services.html#marketing" class="hover:text-white">Digital Marketing</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-6">Company</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="about.html" class="hover:text-white">About Us</a></li>
+                        <li><a href="about.html#team" class="hover:text-white">Our Team</a></li>
+                        <li><a href="#" class="hover:text-white">Careers</a></li>
+                        <li><a href="blogs.html" class="hover:text-white">Blog</a></li>
+                        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-6">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates.</p>
+                    <form>
+                        <div class="flex">
+                            <input type="email" placeholder="Enter your email" class="p-3 bg-gray-800 rounded-l-lg w-full focus:outline-none text-white">
+                            <button type="submit" class="btn-primary px-4 rounded-r-lg"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400">© 2025 LevelUp Develop. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>
+

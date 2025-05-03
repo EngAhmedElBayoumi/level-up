@@ -1,0 +1,266 @@
+:root {
+    --primary: #6C63FF;
+    --secondary: #22d3ee;
+    --dark: #121212;
+    --darker: #0a0a0a;
+    --light: #f5f5f5;
+    --gray: #374151;
+}
+
+body {
+    background-color: var(--dark);
+    color: var(--light);
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Main content container adjustments */
+.main-content-area {
+    position: relative; /* Ensure content is positioned relative to body */
+    z-index: 10; /* Ensure content is above canvas */
+    padding-top: 6rem; /* Adjust based on fixed navbar height (pt-24 = 6rem) */
+    padding-bottom: 3rem; /* pb-12 = 3rem */
+    /* Make sure it's visible */
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.page {
+    /* animation: fadeIn 0.5s ease-in-out; */ /* Temporarily remove animation */
+    min-height: 80vh;
+    display: block; /* Ensure page div is block */
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Keep active-page for initial fade-in on home - maybe not needed now */
+/* .active-page {
+    display: block;
+} */
+
+/* @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+} */
+
+.gradient-text {
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card {
+    background-color: var(--darker);
+    border: 1px solid #2d2d2d;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    border-color: var(--primary);
+}
+
+.navbar {
+    background-color: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 50;
+}
+
+.logo-text {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+#canvas-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 0;
+    opacity: 0.4;
+}
+
+.glow {
+    box-shadow: 0 0 15px rgba(108, 99, 255, 0.5);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 10, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.skill-bar {
+    height: 8px;
+    background: #2d2d2d;
+    border-radius: 4px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.skill-percentage {
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    height: 8px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.skill-percentage::before {
+    content: attr(data-percent);
+    position: absolute;
+    right: 0;
+    top: -25px;
+}
+
+.wavy {
+    position: relative;
+    -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
+}
+
+.wavy span {
+    position: relative;
+    display: inline-block;
+    color: var(--light);
+    font-weight: bold;
+    animation: wave 1s infinite;
+    animation-delay: calc(.1s * var(--i));
+}
+
+@keyframes wave {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.loader {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--darker);
+    z-index: 9999;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+    visibility: visible;
+}
+
+.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Light mode styles */
+body.light-mode {
+    --dark: #f5f5f5;
+    --darker: #ffffff;
+    --light: #121212;
+    --gray: #4a5568;
+    background-color: var(--dark);
+    color: var(--light);
+}
+
+body.light-mode .card {
+    background-color: var(--darker);
+    border-color: #e2e8f0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .navbar {
+     background-color: rgba(255, 255, 255, 0.8);
+}
+
+body.light-mode .logo-text {
+    /* Gradient might need adjustment or fallback for light mode */
+}
+
+body.light-mode .nav-link {
+    color: var(--light);
+}
+
+body.light-mode .text-gray-400 {
+    color: var(--gray);
+}
+
+body.light-mode input,
+body.light-mode textarea {
+    background-color: #e2e8f0;
+    color: #1a202c;
+    border-color: #cbd5e1;
+}
+
+body.light-mode input::placeholder {
+    color: #718096;
+}
+
+body.light-mode .skill-bar {
+    background: #e2e8f0;
+}
+
+body.light-mode .wavy span {
+    color: var(--light);
+}
+
+body.light-mode .loader {
+    background-color: #ffffff;
+}
+
+/* Footer needs relative positioning and z-index */
+footer {
+    position: relative;
+    z-index: 10;
+}
+
