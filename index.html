@@ -61,7 +61,10 @@
                 <a href="contact.html" class="nav-link">Contact</a>
             </div>
             <div class="flex items-center space-x-4">
-                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
             </div>
         </div>
         
@@ -146,49 +149,234 @@
                 </div>
             </div>
 
-            <!-- Featured Work Section -->
+            <!-- About Us Section -->
+            <div class="py-16 relative">
+                <div class="absolute -right-20 top-0 w-72 h-72 bg-primary rounded-full filter blur-3xl opacity-10 z-0"></div>
+                <h2 class="text-3xl font-bold mb-12 text-center">About <span class="gradient-text">LevelUp Develop</span></h2>
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/2">
+                        <div class="relative">
+                            <div class="aspect-square bg-gray-800 rounded-2xl overflow-hidden" id="about-3d-container"></div>
+                            <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-primary rounded-full filter blur-xl opacity-20"></div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-bold mb-4">Innovating Digital Solutions Since 2020</h3>
+                        <p class="text-gray-400 mb-6">We're a team of passionate developers, designers, and digital strategists dedicated to transforming businesses through technology. Our approach combines creativity with technical excellence to deliver exceptional results.</p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="p-4 bg-gray-900 rounded-lg">
+                                <i class="fas fa-rocket text-primary text-2xl mb-2"></i>
+                                <h4 class="font-bold mb-2">Innovation First</h4>
+                                <p class="text-sm text-gray-400">Cutting-edge solutions for modern challenges</p>
+                            </div>
+                            <div class="p-4 bg-gray-900 rounded-lg">
+                                <i class="fas fa-users text-primary text-2xl mb-2"></i>
+                                <h4 class="font-bold mb-2">Client Focus</h4>
+                                <p class="text-sm text-gray-400">Your success is our priority</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Projects Section -->
             <div class="py-16">
                 <h2 class="text-3xl font-bold mb-12 text-center">Featured <span class="gradient-text">Projects</span></h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                     <div class="card rounded-xl overflow-hidden">
-                        <div class="h-48 bg-gray-700"></div>
+                <div class="project-grid grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="project-card bg-gray-900 rounded-xl overflow-hidden">
+                        <div class="relative h-48">
+                            <div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-10"></div>
+                            <img src="https://via.placeholder.com/400x300" alt="E-Commerce Platform" class="w-full h-full object-cover">
+                        </div>
                         <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">E-Commerce Platform</h3>
-                            <p class="text-gray-400 mb-4">A fully responsive shopping experience...</p>
-                            <a href="portfolio.html" class="text-primary hover:underline">View Project</a>
+                            <h3 class="text-xl font-bold mb-2">AI-Powered E-Commerce</h3>
+                            <p class="text-gray-400 mb-4">Next-generation shopping platform with AI-driven recommendations and real-time analytics.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-gray-800 rounded-full text-xs">React</span>
+                                <span class="px-2 py-1 bg-gray-800 rounded-full text-xs">Node.js</span>
+                                <span class="px-2 py-1 bg-gray-800 rounded-full text-xs">TensorFlow</span>
+                            </div>
+                            <a href="project-details.html" class="text-primary hover:underline">View Case Study →</a>
                         </div>
                     </div>
-                     <div class="card rounded-xl overflow-hidden">
-                        <div class="h-48 bg-gray-700"></div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card bg-gray-900 rounded-xl overflow-hidden">
+                        <div class="relative h-48">
+                            <div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-10"></div>
+                            <img src="https://via.placeholder.com/400x300" alt="FinTech Dashboard" class="w-full h-full object-cover">
+                        </div>
                         <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Finance Dashboard</h3>
-                            <p class="text-gray-400 mb-4">Real-time data visualization...</p>
-                             <a href="portfolio.html" class="text-primary hover:underline">View Project</a>
+                            <h3 class="text-xl font-bold mb-2">FinTech Dashboard</h3>
+                            <p class="text-gray-400 mb-4">Real-time financial analytics platform with blockchain integration and secure transactions.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-gray-800 rounded-full text-xs">Vue.js</span>
+                                <span class="px-2 py-1 bg-gray-800 rounded-full text-xs">Python</span>
+                                <span class="px-2 py-1 bg-gray-800 rounded-full text-xs">Blockchain</span>
+                            </div>
+                            <a href="project-details.html" class="text-primary hover:underline">View Case Study →</a>
                         </div>
                     </div>
-                     <div class="card rounded-xl overflow-hidden">
-                        <div class="h-48 bg-gray-700"></div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card bg-gray-900 rounded-xl overflow-hidden">
+                        <div class="relative h-48">
+                            <div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-10"></div>
+                            <img src="https://via.placeholder.com/400x300" alt="Healthcare Portal" class="w-full h-full object-cover">
+                        </div>
                         <div class="p-6">
                             <h3 class="text-xl font-bold mb-2">Healthcare Portal</h3>
-                            <p class="text-gray-400 mb-4">Secure patient management system...</p>
-                             <a href="portfolio.html" class="text-primary hover:underline">View Project</a>
+                            <p class="text-gray-400 mb-4">Secure patient management system with telemedicine and AI diagnostics integration.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-gray-800 rounded-full text-xs">Angular</span>
+                                <span class="px-2 py-1 bg-gray-800 rounded-full text-xs">Java</span>
+                                <span class="px-2 py-1 bg-gray-800 rounded-full text-xs">AWS</span>
+                            </div>
+                            <a href="project-details.html" class="text-primary hover:underline">View Case Study →</a>
                         </div>
                     </div>
                 </div>
-                 <div class="text-center mt-8">
-                     <a href="portfolio.html" class="btn-primary px-8 py-3 rounded-full font-bold">Explore More Projects</a>
-                 </div>
             </div>
-            
-             <!-- CTA Section -->
-            <div class="py-16 text-center">
-                <div class="bg-gray-900 rounded-2xl p-12 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary rounded-full filter blur-3xl opacity-10 z-0"></div>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 relative z-10">Ready to <span class="gradient-text">Level Up</span> your digital presence?</h2>
-                    <p class="text-xl text-gray-400 mb-8 max-w-2xl mx-auto relative z-10">Let's discuss how we can help transform your business with our web development expertise.</p>
-                    <a href="contact.html" class="btn-primary px-8 py-4 rounded-full font-bold text-lg relative z-10">Get in Touch</a>
+
+            <!-- About Us Section with Accordion -->
+            <div class="py-16 relative">
+                <div class="absolute -left-20 top-0 w-72 h-72 bg-primary rounded-full filter blur-3xl opacity-10 z-0"></div>
+                <h2 class="text-3xl font-bold mb-12 text-center">About <span class="gradient-text">Us</span></h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="relative">
+                        <div id="about-3d-container" class="w-full h-96 bg-gray-900 rounded-xl overflow-hidden"></div>
+                    </div>
+                    <div class="space-y-4">
+                        <!-- Accordion Items -->
+                        <div class="accordion-item bg-gray-900 rounded-xl overflow-hidden">
+                            <button class="accordion-button w-full p-4 text-left font-bold flex justify-between items-center">
+                                Our Mission
+                                <i class="fas fa-plus"></i>
+                            </button>
+                            <div class="accordion-content p-4 bg-gray-800">
+                                <p class="text-gray-400">To empower businesses through innovative digital solutions that drive growth and success in the modern digital landscape.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-gray-900 rounded-xl overflow-hidden">
+                            <button class="accordion-button w-full p-4 text-left font-bold flex justify-between items-center">
+                                Our Expertise
+                                <i class="fas fa-plus"></i>
+                            </button>
+                            <div class="accordion-content p-4 bg-gray-800">
+                                <p class="text-gray-400">Specializing in custom web applications, mobile development, AI integration, and cloud solutions with cutting-edge technologies.</p>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-gray-900 rounded-xl overflow-hidden">
+                            <button class="accordion-button w-full p-4 text-left font-bold flex justify-between items-center">
+                                Our Process
+                                <i class="fas fa-plus"></i>
+                            </button>
+                            <div class="accordion-content p-4 bg-gray-800">
+                                <p class="text-gray-400">We follow an agile methodology with continuous client collaboration, ensuring transparent communication and optimal results.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <!-- Latest Blog Posts -->
+            <div class="py-16">
+                <h2 class="text-3xl font-bold mb-12 text-center">Latest <span class="gradient-text">Insights</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Blog Post 1 -->
+                    <div class="blog-hover-effect bg-gray-900 rounded-xl overflow-hidden">
+                        <div class="relative h-48">
+                            <img src="https://via.placeholder.com/400x300" alt="AI in Web Development" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <span class="text-sm text-gray-400">Dec 15, 2023</span>
+                                <span class="mx-2 text-gray-600">•</span>
+                                <span class="text-sm text-primary">AI & Development</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">The Future of AI in Web Development</h3>
+                            <p class="text-gray-400 mb-4">Exploring how artificial intelligence is revolutionizing web development practices...</p>
+                            <a href="blog-details.html" class="text-primary hover:underline">Read More →</a>
+                        </div>
+                    </div>
+
+                    <!-- Blog Post 2 -->
+                    <div class="blog-hover-effect bg-gray-900 rounded-xl overflow-hidden">
+                        <div class="relative h-48">
+                            <img src="https://via.placeholder.com/400x300" alt="Cloud Architecture" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <span class="text-sm text-gray-400">Dec 10, 2023</span>
+                                <span class="mx-2 text-gray-600">•</span>
+                                <span class="text-sm text-primary">Cloud Computing</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Modern Cloud Architecture Patterns</h3>
+                            <p class="text-gray-400 mb-4">Best practices for building scalable and resilient cloud applications...</p>
+                            <a href="blog-details.html" class="text-primary hover:underline">Read More →</a>
+                        </div>
+                    </div>
+
+                    <!-- Blog Post 3 -->
+                    <div class="blog-hover-effect bg-gray-900 rounded-xl overflow-hidden">
+                        <div class="relative h-48">
+                            <img src="https://via.placeholder.com/400x300" alt="UX Design" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-4">
+                                <span class="text-sm text-gray-400">Dec 5, 2023</span>
+                                <span class="mx-2 text-gray-600">•</span>
+                                <span class="text-sm text-primary">UX Design</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">UX Design Trends for 2024</h3>
+                            <p class="text-gray-400 mb-4">Upcoming trends shaping the future of user experience design...</p>
+                            <a href="blog-details.html" class="text-primary hover:underline">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="py-16">
+                <div class="bg-gray-900 rounded-3xl p-12 relative overflow-hidden">
+                    <div class="absolute -right-20 -top-20 w-80 h-80 bg-primary rounded-full filter blur-3xl opacity-10"></div>
+                    <div class="relative z-10">
+                        <h2 class="text-3xl font-bold mb-12 text-center">Let's <span class="gradient-text">Connect</span></h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-4">Get in Touch</h3>
+                                <p class="text-gray-400 mb-6">Have a project in mind? Let's discuss how we can help bring your ideas to life.</p>
+                                <div class="space-y-4">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-map-marker-alt text-primary w-8"></i>
+                                        <span class="text-gray-400">123 Innovation Street, Tech City</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-envelope text-primary w-8"></i>
+                                        <span class="text-gray-400">hello@levelupdevelop.com</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-phone text-primary w-8"></i>
+                                        <span class="text-gray-400">+1 (555) 123-4567</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <form class="space-y-4">
+                                <div class="grid grid-cols-2 gap-4">
+                                    <input type="text" placeholder="Name" class="p-3 bg-gray-800 rounded-lg w-full focus:outline-none">
+                                    <input type="email" placeholder="Email" class="p-3 bg-gray-800 rounded-lg w-full focus:outline-none">
+                                </div>
+                                <input type="text" placeholder="Subject" class="p-3 bg-gray-800 rounded-lg w-full focus:outline-none">
+                                <textarea placeholder="Message" rows="4" class="p-3 bg-gray-800 rounded-lg w-full focus:outline-none"></textarea>
+                                <button type="submit" class="btn-primary px-8 py-3 rounded-full font-bold w-full">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Original CTA Section continues here -->
         </div>
     </main> <!-- End Main Content Wrapper -->
 

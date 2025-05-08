@@ -207,3 +207,109 @@ document.addEventListener('DOMContentLoaded', () => {
     hidePreloader();
 });
 
+
+// About section 3D animation
+// Add after existing code
+
+// Accordion functionality
+document.querySelectorAll('.accordion-button').forEach(button => {
+    button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        const icon = button.querySelector('i');
+        
+        // Toggle active class
+        button.classList.toggle('active');
+        content.classList.toggle('active');
+        
+        // Toggle icon
+        if (content.classList.contains('active')) {
+            icon.classList.replace('fa-plus', 'fa-minus');
+        } else {
+            icon.classList.replace('fa-minus', 'fa-plus');
+        }
+    });
+});
+
+// Enhanced About section 3D animation
+function initAbout3D() {
+    const container = document.getElementById('about-3d-container');
+    if (!container) return;
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, container.offsetWidth / container.offsetHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+
+    renderer.setSize(container.offsetWidth, container.offsetHeight);
+    container.appendChild(renderer.domElement);
+
+    // Create an icosahedron geometry
+    const geometry = new THREE.IcosahedronGeometry(5, 0);
+    const material = new THREE.MeshPhongMaterial({
+        color: 0x6C63FF,
+        wireframe: true,
+        wireframeLinewidth: 2
+    });
+    const mesh = new THREE.Mesh(geometry, material);
+    scene.add(mesh);
+
+    // Add lights
+    const light = new THREE.DirectionalLight(0xffffff, 1);
+    light.position.set(10, 10, 10);
+    scene.add(light);
+    scene.add(new THREE.AmbientLight(0x404040));
+
+    camera.position.z = 15;
+
+    // Animation
+    function animate() {
+        requestAnimationFrame(animate);
+        mesh.rotation.x += 0.01;
+        mesh.rotation.y += 0.01;
+        renderer.render(scene, camera);
+    }
+    animate();
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        const width = container.offsetWidth;
+        const height = container.offsetHeight;
+        renderer.setSize(width, height);
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+    });
+}
+
+// Initialize the about section 3D animation
+document.addEventListener('DOMContentLoaded', initAbout3D);
+
+// Create your 3D object here
+const geometry = new THREE.TorusKnotGeometry(10, 3, 100, 16);
+const material = new THREE.MeshBasicMaterial({ 
+    color: 0x6C63FF,
+    wireframe: true
+});
+const torusKnot = new THREE.Mesh(geometry, material);
+scene.add(torusKnot);
+
+camera.position.z = 30;
+
+function animate() {
+    requestAnimationFrame(animate);
+    torusKnot.rotation.x += 0.01;
+    torusKnot.rotation.y += 0.01;
+    renderer.render(scene, camera);
+}
+animate();
+
+// Handle window resize
+window.addEventListener('resize', () => {
+    const width = container.offsetWidth;
+    const height = container.offsetHeight;
+    renderer.setSize(width, height);
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+});
+
+// Call this function after the page loads
+document.addEventListener('DOMContentLoaded', initAbout3D);
+

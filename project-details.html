@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details | LevelUp Develop</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.9.1/dist/gsap.min.js"></script>
+</head>
+<body class="overflow-x-hidden">
+    <!-- Preloader -->
+    <div class="loader">
+        <div class="wavy text-3xl md:text-5xl">
+            <span style="--i:1;">L</span>
+            <span style="--i:2;">e</span>
+            <span style="--i:3;">v</span>
+            <span style="--i:4;">e</span>
+            <span style="--i:5;">l</span>
+            <span style="--i:6;">U</span>
+            <span style="--i:7;">p</span>
+            <span style="--i:8;">&nbsp;</span>
+            <span style="--i:9;">D</span>
+            <span style="--i:10;">e</span>
+            <span style="--i:11;">v</span>
+            <span style="--i:12;">e</span>
+            <span style="--i:13;">l</span>
+            <span style="--i:14;">o</span>
+            <span style="--i:15;">p</span>
+        </div>
+    </div>
+
+    <!-- 3D Animation Canvas -->
+    <div id="canvas-container"></div>
+
+    <!-- Include your existing navbar here -->
+    <nav class="navbar fixed w-full top-0 z-50 py-4 px-6">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="logo-container mr-3">
+                    <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 80L50 20L80 80H20Z" stroke="#6C63FF" stroke-width="5" fill="none" />
+                        <path d="M35 50L50 20L65 50H35Z" fill="#6C63FF" />
+                        <rect x="35" y="55" width="30" height="10" fill="#22d3ee" />
+                    </svg>
+                </div>
+                <div>
+                    <span class="logo-text gradient-text">LevelUp Develop</span>
+                </div>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="portfolio.html" class="nav-link text-primary">Portfolio</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="blogs.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900 py-4 px-6 absolute top-full left-0 w-full">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="portfolio.html" class="nav-link text-primary">Portfolio</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="blogs.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content-area container mx-auto px-6">
+        <div class="max-w-4xl mx-auto">
+            <!-- Project Header -->
+            <div class="mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">AI-Powered Analytics Dashboard</h1>
+                <div class="flex items-center space-x-4 text-gray-400">
+                    <span><i class="fas fa-calendar-alt mr-2"></i>Completed: December 2023</span>
+                    <span><i class="fas fa-tag mr-2"></i>Web Application</span>
+                </div>
+            </div>
+
+            <!-- Project Gallery -->
+            <div class="mb-12">
+                <div class="rounded-xl overflow-hidden">
+                    <img src="https://via.placeholder.com/1200x600" alt="Project Overview" class="w-full">
+                </div>
+                <div class="grid grid-cols-3 gap-4 mt-4">
+                    <img src="https://via.placeholder.com/400x300" alt="Detail 1" class="rounded-lg">
+                    <img src="https://via.placeholder.com/400x300" alt="Detail 2" class="rounded-lg">
+                    <img src="https://via.placeholder.com/400x300" alt="Detail 3" class="rounded-lg">
+                </div>
+            </div>
+
+            <!-- Project Details -->
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="md:col-span-2">
+                    <h2 class="text-2xl font-bold mb-4">Project Overview</h2>
+                    <p class="text-gray-400 mb-6">
+                        An innovative analytics dashboard that leverages artificial intelligence to provide real-time insights and predictive analytics. The platform processes massive amounts of data to deliver actionable business intelligence through an intuitive interface.
+                    </p>
+                    
+                    <h3 class="text-xl font-bold mb-3">Key Features</h3>
+                    <ul class="list-disc list-inside text-gray-400 mb-6 space-y-2">
+                        <li>Real-time data processing and visualization</li>
+                        <li>AI-powered predictive analytics</li>
+                        <li>Custom report generation</li>
+                        <li>Interactive dashboards with drag-and-drop functionality</li>
+                        <li>Advanced user permission management</li>
+                    </ul>
+
+                    <h3 class="text-xl font-bold mb-3">Technical Stack</h3>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">React.js</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Node.js</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">TensorFlow</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">MongoDB</span>
+                        <span class="px-3 py-1 bg-gray-800 rounded-full text-sm">Docker</span>
+                    </div>
+                </div>
+
+                <div class="bg-gray-900 p-6 rounded-xl h-fit">
+                    <h3 class="text-xl font-bold mb-4">Project Details</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="text-gray-400">Client</h4>
+                            <p class="font-bold">TechCorp Solutions</p>
+                        </div>
+                        <div>
+                            <h4 class="text-gray-400">Timeline</h4>
+                            <p class="font-bold">4 months</p>
+                        </div>
+                        <div>
+                            <h4 class="text-gray-400">Role</h4>
+                            <p class="font-bold">Full-stack Development</p>
+                        </div>
+                        <div>
+                            <h4 class="text-gray-400">Website</h4>
+                            <a href="#" class="text-primary hover:underline">Visit Project →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="mb-12">
+                <h2 class="text-2xl font-bold mb-6">Project Results</h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-gray-900 p-6 rounded-xl">
+                        <h3 class="text-4xl font-bold gradient-text mb-2">45%</h3>
+                        <p class="text-gray-400">Increase in User Engagement</p>
+                    </div>
+                    <div class="bg-gray-900 p-6 rounded-xl">
+                        <h3 class="text-4xl font-bold gradient-text mb-2">2.5x</h3>
+                        <p class="text-gray-400">Faster Data Processing</p>
+                    </div>
+                    <div class="bg-gray-900 p-6 rounded-xl">
+                        <h3 class="text-4xl font-bold gradient-text mb-2">98%</h3>
+                        <p class="text-gray-400">Client Satisfaction</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Include your existing footer here -->
+    <footer class="bg-darker py-12 relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">LevelUp Develop</h3>
+                    <p class="text-gray-400 mb-4">Transforming ideas into powerful digital solutions.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Services</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-primary">Web Development</a></li>
+                        <li><a href="#" class="hover:text-primary">Mobile Apps</a></li>
+                        <li><a href="#" class="hover:text-primary">Cloud Solutions</a></li>
+                        <li><a href="#" class="hover:text-primary">UI/UX Design</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-primary">About Us</a></li>
+                        <li><a href="#" class="hover:text-primary">Portfolio</a></li>
+                        <li><a href="#" class="hover:text-primary">Blog</a></li>
+                        <li><a href="#" class="hover:text-primary">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-map-marker-alt mr-2"></i>123 Tech Street, NY</li>
+                        <li><i class="fas fa-phone mr-2"></i>+1 234 567 890</li>
+                        <li><i class="fas fa-envelope mr-2"></i>info@levelup.dev</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 LevelUp Develop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>
